@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: activity-engine
+  namespace: fintech-infrastructure
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: ingestion-core
+  template:
+    metadata:
+      labels:
+        component: ingestion-core
+    spec:
+      containers:
+      - name: web-server
+        image: nginx:alpine
+        ports:
+        - containerPort: 80
