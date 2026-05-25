@@ -4,7 +4,7 @@ metadata:
   name: ingestion-frontend-svc
   namespace: fintech-infrastructure
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     component: ingestion-core
   ports:

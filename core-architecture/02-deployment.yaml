@@ -3,8 +3,12 @@ kind: Deployment
 metadata:
   name: activity-engine
   namespace: fintech-infrastructure
+  labels:
+    app: fintech-platform
+    component: ingestion-core
+    environment: lab
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       component: ingestion-core
