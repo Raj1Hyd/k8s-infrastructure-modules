@@ -14,7 +14,7 @@ This module demonstrates a complete, isolated data ingestion architecture design
 1. **Strict Boundary Isolation (`01-namespace.yaml`)**
    - Implements hard administrative partitions utilizing dedicated custom Namespaces (`fintech-infrastructure`) to ensure multi-tenant security and blast-radius containment.
 
-2. **Scalable Declarative Workloads (`02-ingestion-pod.yaml`)**
+2. **Scalable Declarative Workloads (`02-deployment.yaml`)**
    - Deploys highly available, self-healing application layers managed via `apps/v1.Deployment` structures. 
    - Utilizes custom match-labels (`component: ingestion-core`) for dynamic scheduling and controller targeting.
 
@@ -34,6 +34,6 @@ This module demonstrates a complete, isolated data ingestion architecture design
 ├── README.md                   # Main portfolio documentation & architectural briefs
 └── core-architecture/          # Phase 1 Production Module Manifests
     ├── 01-namespace.yaml       # Isolation Layer
-    ├── 02-ingestion-pod.yaml   # Workload Layer
+    ├── 02-deployment.yaml      # Workload Layer
     ├── 03-service.yaml         # Internal Routing Layer
     └── 04-ingress.yaml         # Layer 7 Gateway Ingress Layer
